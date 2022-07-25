@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/zeonCalendar/static/css/main.dfcb68af.css",
+    "main.js": "/zeonCalendar/static/js/main.db1eb00a.js",
+    "index.html": "/zeonCalendar/index.html",
+    "main.dfcb68af.css.map": "/zeonCalendar/static/css/main.dfcb68af.css.map",
+    "main.db1eb00a.js.map": "/zeonCalendar/static/js/main.db1eb00a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dfcb68af.css",
+    "static/js/main.db1eb00a.js"
+  ]
+}
