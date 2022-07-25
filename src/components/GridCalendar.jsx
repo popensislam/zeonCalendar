@@ -1,7 +1,8 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getSelectedData } from "../store/reducers/planReducer";
 
 const GridCalendar = ({ daysArray, currentDay, setActive }) => {
+    const {plans} = useSelector(state => state.plan)
     const dispatch = useDispatch()
 
     const modalToAdd = (day) => {
@@ -13,6 +14,13 @@ const GridCalendar = ({ daysArray, currentDay, setActive }) => {
             <div className="grid">
                 {daysArray.map(day =>
                     <div className={day.isoWeekday() == 6 || day.isoWeekday() == 7 ? "grid-item weekend" : "grid-item"} key={day.format('DD-MM-YYYY')}>
+                        <div className={
+                            plans.find(item => item.data == day.format('DD MMM YYYY'))
+                            ? 
+                                'red-circle'
+                            :
+                                ''
+                        }></div>
                         <p onClick={() => modalToAdd(day.format('DD MMM YYYY'))} className={currentDay.format('DD-MM-YYYY') == day.format('DD-MM-YYYY') ? "active" : ''}>
                             {day.format('D')}
                         </p>

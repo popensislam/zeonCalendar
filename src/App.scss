@@ -88,7 +88,7 @@
         background: #f1f1f1;
       }
       &-item {
-        display: grid;
+        display: flex;
         justify-content: end;
         height: 90px;
         background-color: #fff;
@@ -96,8 +96,16 @@
         font-weight: bold;
         padding: 5px;
 
+        .red-circle {
+          margin: 10px 10px 10px 0;
+          width: 10px;
+          height: 10px;
+          background-color: red;
+          border-radius: 100%;
+        }
         p{
           cursor: pointer;
+          position: relative;
           background-color: transparent;
           height: 30px;
           width: 30px;

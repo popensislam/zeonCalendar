@@ -5,7 +5,7 @@ const initialState = {
         {
             title: 'hello',
             text: 'go to shop',
-            data: '24 Jun 2022'
+            data: '24 Jul 2022'
         },
     ],
     selectedData: ''
