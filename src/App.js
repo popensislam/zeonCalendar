@@ -32,20 +32,22 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <div className='calendar'>
-        <SwitchMonth
-          currentMonth={currentMonth}
-          currentYear={currentYear}
-          handleNextMonth={handleNextMonth}
-          handlePrevMonth={handlePrevMonth}
-          handleThisMonth={handleThisMonth}
-        />
-        <DaysOfWeek />
-        <GridCalendar
-          flexibleCurrentMonth={flexibleCurrentMonth}
-          daysArray={daysArray}
-          currentDay={currentDay}
-          setActive={setActive} />
+      <div className='content'>
+        <div className='calendar'>
+          <SwitchMonth
+            currentMonth={currentMonth}
+            currentYear={currentYear}
+            handleNextMonth={handleNextMonth}
+            handlePrevMonth={handlePrevMonth}
+            handleThisMonth={handleThisMonth}
+          />
+          <DaysOfWeek />
+          <GridCalendar
+            flexibleCurrentMonth={flexibleCurrentMonth}
+            daysArray={daysArray}
+            currentDay={currentDay}
+            setActive={setActive} />
+        </div>
       </div>
       <ModalAdd setActive={setActive} active={active} />
     </div>

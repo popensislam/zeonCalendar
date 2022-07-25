@@ -22,13 +22,19 @@
 }
 
 
+.content {
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .calendar {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0 auto;
   width: 70%;
-  height: 100%;
   &-head {
     display: flex;
     justify-content: space-between;
@@ -90,7 +96,7 @@
       &-item {
         display: flex;
         justify-content: end;
-        height: 90px;
+        height: 80px;
         background-color: #fff;
         font-size: 18px;
         font-weight: bold;
