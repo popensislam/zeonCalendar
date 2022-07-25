@@ -108,10 +108,12 @@
           position: relative;
           background-color: transparent;
           height: 30px;
-          width: 30px;
           border-radius: 100%;
           text-align: center;
           padding: 5px;
+        }
+        .isNotCurrentMonth { 
+          color: #BDBEBD;
         }
 
         .active{

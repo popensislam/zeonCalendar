@@ -10,12 +10,13 @@ import ModalAdd from './components/UI/ModalAdd';
 function App() {
   const [active, setActive] = useState(false)
 
-  moment.updateLocale('en', { week: { dow: 1 } })
+  // moment.updateLocale('en', { week: { dow: 0 } })
   const [today, setToday] = useState(moment())
-  const startDay = today.clone().startOf('month').startOf('week').subtract(1, 'day')
+  const startDay = today.clone().startOf('month').startOf('week')
   const currentMonth = today.clone().format('MMMM')
   const currentYear = today.clone().format('YYYY')
   const currentDay = moment().clone()
+  const flexibleCurrentMonth = today.clone()
   const day = startDay.clone()
   const daysArray = [...Array(42)].map(() => day.add(1, 'day').clone())
 
@@ -40,9 +41,13 @@ function App() {
           handleThisMonth={handleThisMonth}
         />
         <DaysOfWeek />
-        <GridCalendar daysArray={daysArray} currentDay={currentDay} setActive={setActive}/>
+        <GridCalendar
+          flexibleCurrentMonth={flexibleCurrentMonth}
+          daysArray={daysArray}
+          currentDay={currentDay}
+          setActive={setActive} />
       </div>
-      <ModalAdd setActive={setActive} active={active}/>
+      <ModalAdd setActive={setActive} active={active} />
     </div>
   );
 }
