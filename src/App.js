@@ -8,7 +8,7 @@ import moment from 'moment'
 import ModalAdd from './components/UI/ModalAdd';
 
 function App() {
-  const [active, setActive] = useState(true)
+  const [active, setActive] = useState(false)
 
   moment.updateLocale('en', { week: { dow: 1 } })
   const [today, setToday] = useState(moment())
