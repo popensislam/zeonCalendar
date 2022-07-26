@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getPlan } from '../../store/reducers/planReducer';
+import { deletePlan, getPlan } from '../../store/reducers/planReducer';
 
 const ModalAdd = ({ active, setActive }) => {
     const { plans, selectedData } = useSelector(state => state.plan)
@@ -17,13 +17,20 @@ const ModalAdd = ({ active, setActive }) => {
     }, [active])
 
     const addPlan = () => {
-        console.log(value.title, value.text)
+        if (!value.title || !value.text) return alert('Заполните поля')
+
         const objPlan = {
             title: value.title,
             text: value.text,
             data: selectedData
         }
         dispatch(getPlan(objPlan))
+        setValue({ title: '', text: '' })
+        setActive(false)
+    }
+    const deleteData = (selectedData) => {
+        console.log(selectedData)
+        dispatch(deletePlan(selectedData))
         setValue({ title: '', text: '' })
         setActive(false)
     }
@@ -43,6 +50,9 @@ const ModalAdd = ({ active, setActive }) => {
                 </div>
                 <div className="modal-button">
                     <button onClick={() => addPlan()}>{selectedPlan.length ? 'Save' : 'Add'}</button>
+                    {
+                        selectedPlan.length != 0 && <button onClick={() => deleteData(selectedData)}>Delete</button>
+                    }
                 </div>
             </div>
         </>

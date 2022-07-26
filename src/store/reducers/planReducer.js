@@ -19,7 +19,6 @@ export const planSlice = createSlice({
             const foundData = state.plans.find(item => item.data == action.payload.data)
 
             if (foundData) {
-                console.log(foundData.data)
                 const plans = state.plans.filter(item => item.data != foundData.data)
                 plans.push(action.payload)
                 state.plans = plans
@@ -27,11 +26,16 @@ export const planSlice = createSlice({
             }
             state.plans.push(action.payload)
         },
+        deletePlan(state, action) {
+            const foundPlan = state.plans.find(item => item.data == action.payload)
+            const newState = state.plans.filter(item => item.data != foundPlan.data)
+            state.plans = newState
+        },
         getSelectedData(state, action) {
             state.selectedData = action.payload
         }
     }
 })
 
-export const { getPlan, getSelectedData } = planSlice.actions
+export const { getPlan, getSelectedData, deletePlan } = planSlice.actions
 export default planSlice.reducer

@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
 import { getSelectedData } from "../store/reducers/planReducer";
-import moment from 'moment'
 
 const GridCalendar = ({ daysArray, currentDay, setActive, flexibleCurrentMonth }) => {
     const { plans } = useSelector(state => state.plan)

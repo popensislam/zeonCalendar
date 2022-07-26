@@ -10,7 +10,6 @@ import ModalAdd from './components/UI/ModalAdd';
 function App() {
   const [active, setActive] = useState(false)
 
-  // moment.updateLocale('en', { week: { dow: 0 } })
   const [today, setToday] = useState(moment())
   const startDay = today.clone().startOf('month').startOf('week')
   const currentMonth = today.clone().format('MMMM')
