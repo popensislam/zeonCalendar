@@ -29,7 +29,6 @@ const ModalAdd = ({ active, setActive }) => {
         setActive(false)
     }
     const deleteData = (selectedData) => {
-        console.log(selectedData)
         dispatch(deletePlan(selectedData))
         setValue({ title: '', text: '' })
         setActive(false)
